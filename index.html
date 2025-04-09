@@ -12,7 +12,7 @@
         /* Estilos básicos para o roadmap visual */
         .roadmap-container { position: relative; padding-left: 20px; }
         .roadmap-phase { margin-bottom: 2rem; padding-left: 30px; position: relative; }
-        .roadmap-phase::before { content: ''; position: absolute; left: 0; top: 10px; bottom: -1rem; width: 2px; background-color: #d1d5db; }
+        .roadmap-phase::before { content: ''; position: absolute; left: 0; top: 10px; bottom: -1rem; width: 2px; background-color: #d1d5db; /* gray-300 */ }
         .roadmap-phase:last-child::before { bottom: calc(100% - 15px); }
         .roadmap-phase .phase-header { position: relative; margin-bottom: 0.5rem; display: flex; align-items: center; margin-left: -30px; }
         .roadmap-phase .phase-badge { position: absolute; left: -25px; top: 0px; background-color: #1E3250; color: white; padding: 0.2rem 0.5rem; font-size: 0.75rem; font-weight: 600; border-radius: 9999px; z-index: 1; border: 2px solid white; }
@@ -28,13 +28,19 @@
         .tab-btn { border-color: transparent; color: #4C6B8B; padding-bottom: 8px; transition: all 0.2s ease; }
         .tab-btn:hover { color: #1E3250; border-color: #AECFE6;}
         .tab-btn.active { border-color: #1E3250; color: #1E3250; font-weight: 600; }
+        /* Estilo para boxes informativos */
+        .info-box { padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .info-box-yellow { background-color: #fef9c3; /* yellow-100 */ border: 1px solid #fde68a; /* yellow-200 */ color: #ca8a04; /* yellow-700 */ }
+        .info-box-blue { background-color: #dbeafe; /* blue-100 */ border: 1px solid #bfdbfe; /* blue-200 */ color: #1e40af; /* blue-800 */ }
+        .info-box i { flex-shrink: 0; margin-top: 0.125rem; }
+        .info-box p { font-size: 0.875rem; line-height: 1.5; }
     </style>
 </head>
 <body class="bg-[#f8fafd] text-[#374151] font-sans">
     <div class="min-h-screen flex flex-col">
         <!-- Header com Logo -->
         <header class="bg-white text-gray-900 py-3 border-b border-gray-200 shadow-sm sticky top-0 z-50">
-            <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+             <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <div class="flex items-center space-x-3">
                     <img src="https://www.pactoglobal.org.br/wp-content/uploads/2024/03/Pacto-Logo.png" alt="Logotipo Pacto Global Rede Brasil" class="h-10 w-auto">
                     <span class="text-gray-300 hidden sm:block">|</span>
@@ -56,7 +62,6 @@
                      <span class="text-5xl md:text-6xl font-extrabold tracking-tight">PODPAH</span><span class="text-5xl md:text-6xl font-extrabold text-[#AECFE6] tracking-tight">CTO</span>
                  </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Construindo a Ponte Rumo à COP30</h2>
-                 <!-- AJUSTE: Texto focado em sociedade brasileira -->
                 <p class="text-center text-lg text-[#AECFE6] max-w-3xl mx-auto mb-8">
                     Uma proposta de parceria estratégica entre o <strong>Pacto Global da ONU - Rede Brasil</strong> e o <strong>Podpah</strong> para conectar a ação climática empresarial com a <strong>sociedade brasileira</strong>.
                 </p>
@@ -65,7 +70,7 @@
 
             <!-- Tabs navigation -->
              <div class="border-b border-gray-300 mb-8 sticky top-[68px] bg-[#f8fafd]/90 backdrop-blur-sm z-40 py-2 overflow-x-auto whitespace-nowrap">
-                <nav class="flex space-x-6 md:space-x-8 container mx-auto px-4 md:px-6" aria-label="Tabs">
+                 <nav class="flex space-x-6 md:space-x-8 container mx-auto px-4 md:px-6" aria-label="Tabs">
                      <button class="tab-btn active py-3 px-1 border-b-2 font-medium text-sm flex items-center" data-tab="overview">
                         <i data-lucide="layout-dashboard" class="w-4 h-4 mr-2 inline-block"></i>Visão Geral e Valor
                     </button>
@@ -84,32 +89,27 @@
                 </nav>
             </div>
 
-            <!-- Tab content: Overview (TEXTO REFINADO) -->
+            <!-- Tab content: Overview -->
             <div class="tab-content" id="overview">
                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
                     <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Visão Geral: A Necessidade da Ponte</h3>
-
                     <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-3 text-[#4C6B8B]">O Contexto: COP30 e a Ação Empresarial</h4>
-                        <!-- AJUSTE: Foco na conexão com a sociedade geral -->
-                        <p class="text-gray-700 leading-relaxed">A crise climática exige ação urgente. A COP30 em Belém é uma oportunidade histórica para o Brasil. Nesse cenário, o <strong>Pacto Global da ONU - Rede Brasil</strong>, como parte da <strong>maior iniciativa de sustentabilidade corporativa do planeta</strong>, mobiliza centenas de empresas através do <span class="font-medium">"Programa Pacto Rumo à COP30"</span>.</p>
-                         <p class="text-gray-700 leading-relaxed mt-2">No entanto, existe um desafio crucial: conectar as <strong>iniciativas transformadoras</strong> dessas empresas engajadas com a **ampla sociedade brasileira**, de forma autêntica, acessível e compreensível. É preciso construir uma <strong>ponte democrática de comunicação</strong>.</p>
+                        <p class="text-gray-700 leading-relaxed">A crise climática exige ação urgente. A COP30 em Belém é uma oportunidade histórica para o Brasil. Nesse cenário, o <strong>Pacto Global da ONU - Rede Brasil</strong> mobiliza centenas de empresas através do <span class="font-medium">"Programa Pacto Rumo à COP30"</span>.</p>
+                         <p class="text-gray-700 leading-relaxed mt-2">O desafio é conectar as <strong>iniciativas transformadoras</strong> dessas empresas com a **ampla sociedade brasileira**, de forma autêntica e acessível. É preciso construir uma <strong>ponte democrática de comunicação</strong>.</p>
                     </div>
-
                     <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-3 text-[#4C6B8B]">A Solução: Podpahcto - A Ponte Democrática</h4>
-                         <!-- AJUSTE: Foco na ponte com a sociedade e tradução -->
                         <p class="text-gray-700 mb-4 leading-relaxed">Propomos a criação do <strong>Podpahcto</strong>: uma série especial de <strong>7 episódios em 2025</strong>, co-criada entre o Podpah e a Rede Brasil do Pacto Global. Esta série será a <strong>ponte essencial</strong> que conecta:</p>
                         <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-4">
-                            <li>O universo técnico e as <strong>iniciativas concretas de sustentabilidade</strong> das empresas participantes do Programa Pacto Rumo à COP30 e especialistas da ONU.</li>
-                            <li>A <strong>linguagem acessível, o alcance massivo e a credibilidade</strong> do Podpah com a **sociedade brasileira em sua diversidade**, que busca entender seu papel nesse cenário.</li>
+                            <li>O universo técnico e as <strong>iniciativas concretas</strong> das empresas participantes do Programa Pacto Rumo à COP30 e especialistas da ONU.</li>
+                            <li>A <strong>linguagem acessível, o alcance massivo e a credibilidade</strong> do Podpah com a **sociedade brasileira em sua diversidade**.</li>
                         </ul>
-                         <p class="text-gray-700 leading-relaxed">Através do Podpahcto, iremos <strong>traduzir</strong> a agenda climática, <strong>mostrar a ação empresarial engajada na prática</strong>, revelar os interesses comuns entre sociedade e setor privado responsável, e mobilizar o **público geral** para a COP30 e além.</p>
+                         <p class="text-gray-700 leading-relaxed">Através do Podpahcto, iremos <strong>traduzir</strong> a agenda climática, <strong>mostrar a ação empresarial engajada na prática</strong>, revelar interesses comuns e mobilizar o **público geral** para a COP30 e além.</p>
                     </div>
-
-                    <h4 class="text-lg font-semibold mb-4 text-[#4C6B8B]">Proposta de Valor Mútua (Reforçada)</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-[#4C6B8B]">Proposta de Valor Mútua</h4>
                      <div class="overflow-x-auto shadow rounded-lg border border-gray-200">
-                        <table class="min-w-full border-collapse">
+                         <table class="min-w-full border-collapse">
                              <thead>
                                 <tr>
                                     <th class="py-3 px-4 bg-[#AECFE6]/30 text-[#1E3250] text-left font-semibold text-sm w-1/2 border-b border-gray-200">Para o Pacto Global (Rede Brasil)</th>
@@ -117,47 +117,24 @@
                                 </tr>
                             </thead>
                              <tbody class="bg-white divide-y divide-gray-100">
-                                <tr>
-                                    <!-- AJUSTE: Foco em ampla sociedade -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Alcance massivo e democrático:</strong> Conectar-se com milhões de brasileiros de forma autêntica e culturalmente relevante.</td>
-                                    <!-- AJUSTE: Foco em plataforma de diálogo -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Liderança e Relevância:</strong> Posicionar-se como plataforma líder e democrática na comunicação de impacto social e sustentabilidade para a sociedade.</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Tradução Eficaz da Ação:</strong> Levar as iniciativas concretas das empresas do Programa Rumo à COP30 ao grande público em linguagem acessível.</td>
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Conteúdo Exclusivo e Acesso:</strong> Pautas únicas com líderes empresariais engajados, especialistas ONU e cobertura de eventos (COP30).</td>
-                                </tr>
-                                 <tr>
-                                    <!-- AJUSTE: Foco em canal principal para a sociedade -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Construção da "Ponte":</strong> Ser o canal principal para conectar o universo da sustentabilidade corporativa com a realidade e interesses da sociedade brasileira.</td>
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Credibilidade e Exclusividade:</strong> Parceria inédita e de alto nível com o sistema ONU (via Pacto Global), agregando diferencial único.</td>
-                                </tr>
-                                <tr>
-                                    <!-- AJUSTE: Foco em público geral -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Humanização e Desmistificação:</strong> Aproximar a ONU e as empresas responsáveis do público geral, mostrando o "lado humano" da sustentabilidade.</td>
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Novas oportunidades comerciais:</strong> Atrair patrocinadores estratégicos alinhados à agenda de sustentabilidade.</td>
-                                </tr>
-                                <tr>
-                                     <!-- AJUSTE: Foco em sociedade mais consciente -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Mobilização Social:</strong> Inspirar uma sociedade mais consciente e engajada na ação climática e nos ODS.</td>
-                                     <!-- AJUSTE: Remover menção a GZ/Millennials -->
-                                    <td class="py-3 px-4 text-sm text-gray-700"><strong>Legado positivo:</strong> Alinhar a marca a valores contemporâneos e à importância histórica da COP30 no Brasil.</td>
-                                </tr>
+                                <tr><td class="py-3 px-4 text-sm text-gray-700"><strong>Alcance massivo e democrático:</strong> Conectar-se com milhões de brasileiros de forma autêntica.</td><td class="py-3 px-4 text-sm text-gray-700"><strong>Liderança e Relevância:</strong> Posicionar-se como plataforma líder na comunicação de impacto social.</td></tr>
+                                <tr><td class="py-3 px-4 text-sm text-gray-700"><strong>Tradução Eficaz da Ação:</strong> Levar as iniciativas das empresas do Programa Rumo à COP30 ao grande público.</td><td class="py-3 px-4 text-sm text-gray-700"><strong>Conteúdo Exclusivo e Acesso:</strong> Pautas únicas com líderes e especialistas (ONU, COP30).</td></tr>
+                                <tr><td class="py-3 px-4 text-sm text-gray-700"><strong>Construção da "Ponte":</strong> Ser o canal principal entre sustentabilidade corporativa e sociedade brasileira.</td><td class="py-3 px-4 text-sm text-gray-700"><strong>Credibilidade e Exclusividade:</strong> Parceria inédita com o sistema ONU (via Pacto Global).</td></tr>
+                                <tr><td class="py-3 px-4 text-sm text-gray-700"><strong>Humanização e Desmistificação:</strong> Aproximar a ONU e empresas responsáveis do público geral.</td><td class="py-3 px-4 text-sm text-gray-700"><strong>Novas oportunidades comerciais:</strong> Atrair patrocinadores estratégicos de sustentabilidade.</td></tr>
+                                <tr><td class="py-3 px-4 text-sm text-gray-700"><strong>Mobilização Social:</strong> Inspirar uma sociedade mais consciente e engajada.</td><td class="py-3 px-4 text-sm text-gray-700"><strong>Legado positivo:</strong> Alinhar a marca à importância histórica da COP30 no Brasil.</td></tr>
                             </tbody>
                         </table>
                      </div>
                  </div>
             </div>
 
-            <!-- Tab content: Concept (Mini-bio e texto ajustados) -->
+            <!-- Tab content: Concept -->
              <div class="tab-content hidden" id="concept">
                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
                     <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">O Conceito: Podpahcto - A Ponte para a COP30</h3>
-
                      <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-3 text-[#4C6B8B]">A Ponte Estratégica e Democrática</h4>
-                        <!-- AJUSTE: Foco em ponte para a sociedade -->
-                        <p class="text-gray-700 leading-relaxed mb-4">O Podpahcto não é apenas um podcast; é a <strong>ponte vital e democrática</strong> que conecta dois mundos essenciais para o futuro do Brasil e do planeta:</p>
+                        <p class="text-gray-700 leading-relaxed mb-4">O Podpahcto não é apenas um podcast; é a <strong>ponte vital e democrática</strong> que conecta dois mundos essenciais:</p>
                          <div class="flex flex-col md:flex-row gap-4 items-stretch justify-center my-6">
                               <div class="text-center p-4 border border-[#AECFE6] rounded-lg bg-[#AECFE6]/20 flex-1 flex flex-col justify-between">
                                  <div><i data-lucide="building-2" class="w-8 h-8 mx-auto text-[#1E3250] mb-2"></i><span class="font-semibold text-[#1E3250]">Ação Empresarial & Técnica</span></div>
@@ -165,28 +142,26 @@
                              </div>
                              <div class="flex items-center justify-center flex-shrink-0 mx-4"><i data-lucide="arrow-left-right" class="w-8 h-8 text-gray-400"></i></div>
                              <div class="text-center p-4 border border-green-200 rounded-lg bg-green-50 flex-1 flex flex-col justify-between">
-                                  <div><i data-lucide="users" class="w-8 h-8 mx-auto text-green-600 mb-2"></i><span class="font-semibold text-green-800">Sociedade Brasileira (Público Geral)</span></div> <!-- AJUSTE -->
+                                  <div><i data-lucide="users" class="w-8 h-8 mx-auto text-green-600 mb-2"></i><span class="font-semibold text-green-800">Sociedade Brasileira</span></div>
                                  <p class="text-xs text-gray-600 mt-2">Busca por autenticidade, linguagem acessível, conexão com a realidade.</p>
                              </div>
                          </div>
-                         <!-- AJUSTE: Foco em tradução para público geral -->
-                        <p class="text-gray-700 leading-relaxed">Através do formato único e da linguagem acessível do Podpah, vamos <strong>traduzir</strong> a complexidade da agenda climática, <strong>mostrar as ações reais</strong> de empresas comprometidas no Programa Pacto Rumo à COP30, <strong>revelar os interesses comuns</strong> e <strong>engajar a ampla sociedade</strong> de forma significativa.</p>
+                        <p class="text-gray-700 leading-relaxed">Através do formato único do Podpah, vamos <strong>traduzir</strong> a complexidade, <strong>mostrar as ações reais</strong>, <strong>revelar interesses comuns</strong> e <strong>engajar a sociedade</strong>.</p>
                     </div>
-
-                     <!-- Rubens Filho Bio Section (Mini-bio ATUALIZADA E AJUSTADA) -->
+                     <!-- Rubens Filho Bio Section -->
                      <div class="mb-8">
                         <h4 class="text-lg font-semibold mb-3 text-[#4C6B8B]">O Papel Estratégico de Rubens Filho: O Tradutor</h4>
-                        <div class="flex flex-col md:flex-row items-start gap-6 bg-[#AECFE6]/20 p-6 rounded-lg border border-[#AECFE6]">
+                        <div class="flex flex-col md:flex-row items-center gap-6 bg-[#AECFE6]/20 p-6 rounded-lg border border-[#AECFE6]">
                              <div class="flex-shrink-0">
                                 <img src="https://d2gjqh9j26unp0.cloudfront.net/profilepic/634c7a535c2c66fd6bc52b756d5f63a1" alt="Foto de Rubens Filho" class="w-24 h-24 rounded-full object-cover shadow-md border-2 border-white">
                              </div>
                              <div>
                                 <p class="text-[#1E3250] font-semibold mb-2">Rubens Filho: O Co-Host Especialista</p>
-                                <!-- Mini-Bio ATUALIZADA E AJUSTADA -->
+                                <!-- Mini-Bio ATUALIZADA -->
                                 <p class="text-gray-700 mb-3 leading-relaxed text-sm">
-                                    Liderando a agenda ambiental do <strong>Pacto Global da ONU - Rede Brasil</strong> (Clima, Amazônia, Água, Economia Circular), Rubens une vasta experiência prática conectando empresas a projetos de impacto com sua formação em Comunicação Social. Ele será o <strong>"tradutor" ideal</strong> no Podpahcto, tornando os temas complexos da COP30 e as <strong>iniciativas empresariais do programa Rumo à COP30</strong> acessíveis e relevantes para o <strong>público geral</strong>, complementando a dinâmica de Igão e Mítico na construção desta ponte essencial.
+                                     Liderando a agenda ambiental do <strong>Pacto Global da ONU - Rede Brasil</strong> (Clima, Amazônia, Água, Economia Circular), Rubens une vasta experiência prática conectando empresas a projetos de impacto com sua formação em Comunicação Social. Ele será o <strong>"tradutor" ideal</strong> no Podpahcto, tornando os temas complexos da COP30 e as <strong>iniciativas empresariais do programa Rumo à COP30</strong> acessíveis e relevantes para o <strong>público geral</strong>, complementando a dinâmica de Igão e Mítico na construção desta ponte essencial.
                                 </p>
-                                <!-- Fim da Mini-Bio ATUALIZADA -->
+                                <!-- Fim da Mini-Bio -->
                                 <ul class="list-none space-y-2 text-sm text-gray-600">
                                      <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-[#4C6B8B] mr-2"></i>Credibilidade Técnica (ONU)</li>
                                      <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-[#4C6B8B] mr-2"></i>Habilidade de Comunicação</li>
@@ -196,27 +171,31 @@
                              </div>
                         </div>
                     </div>
-
                     <div>
                          <h4 class="text-lg font-semibold mb-3 text-[#4C6B8B]">Foco Narrativo: Mostrar, Não Apenas Falar</h4>
-                          <!-- AJUSTE: Foco na audiência geral -->
-                         <p class="text-gray-700 leading-relaxed">Cada episódio buscará ir além da discussão teórica, focando em:
-                             <span class="font-medium text-[#1E3250]">Como</span> as empresas do Programa Rumo à COP30 estão agindo;
-                             <span class="font-medium text-[#1E3250]">Por que</span> isso importa para a **audiência em geral**; e
+                         <p class="text-gray-700 leading-relaxed">Cada episódio buscará focar em:
+                             <span class="font-medium text-[#1E3250]">Como</span> as empresas estão agindo;
+                             <span class="font-medium text-[#1E3250]">Por que</span> isso importa para a sociedade; e
                              <span class="font-medium text-[#1E3250]">O que</span> cada um pode fazer.
                          </p>
                      </div>
                  </div>
             </div>
 
-             <!-- Tab content: Roadmap (Sem alterações textuais aqui, já estava focado nos eventos) -->
+             <!-- Tab content: Roadmap -->
              <div class="tab-content hidden" id="roadmap">
                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
                      <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Roadmap Podpahcto 2025: A Jornada Episódio a Episódio</h3>
-                     <p class="text-gray-600 mb-8 text-center">7 episódios estratégicos mapeando os eventos chave do Pacto Global rumo à COP30.</p>
-                    <div class="roadmap-container max-w-full">
-                        <!-- ... (Conteúdo dos 7 episódios permanece o mesmo da versão anterior) ... -->
-                         <!-- Episódio 1 -->
+                     <p class="text-gray-600 mb-6 text-center">7 episódios estratégicos mapeando os eventos chave do Pacto Global rumo à COP30.</p>
+
+                    <!-- AJUSTE: Box informativo sobre deslocamento -->
+                    <div class="info-box info-box-yellow">
+                         <i data-lucide="info" class="w-5 h-5"></i>
+                        <p><strong>Observação Importante:</strong> O Pacto Global - Rede Brasil oferecerá a estrutura física necessária para montagem de estúdio e equipamentos nos locais dos eventos (episódios #2 a #6). No entanto, os custos relacionados ao deslocamento e hospedagem da equipe Podpah para estes locais não estão cobertos por esta proposta e deverão ser discutidos separadamente.</p>
+                    </div>
+
+                    <div class="roadmap-container max-w-full mt-8">
+                        <!-- Episódio 1 -->
                         <div class="roadmap-phase">
                             <div class="phase-header"><span class="phase-badge">#1</span><h4 class="phase-title">Lançamento Oficial</h4></div>
                             <div class="episode-card"><div class="episode-details"><p class="episode-location-date">Início de 2025 • Estúdio Original Podpah</p><p class="episode-theme"><strong>Tema:</strong> "Podpahcto: A Parceria pela Ação Climática Rumo à COP30"</p><p><strong>Convidados:</strong> Rubens Filho e Rodrigo Favetta (Pacto Global) com Igão e Mítico.</p><p><strong>Objetivos:</strong> Contextualizar parceria, apresentar Pacto Global/Programa Rumo à COP30, humanizar ONU, discutir crise climática/Acordo de Paris, anunciar agenda Podpahcto.</p></div></div>
@@ -241,9 +220,9 @@
                              <div class="phase-header"><span class="phase-badge">#5</span><h4 class="phase-title">Brasil no Cenário Global</h4></div>
                             <div class="episode-card"><div class="episode-details"><p class="episode-location-date">Setembro 2025 • New York, EUA (SDGs In Brazil - ONU)</p><p class="episode-theme"><strong>Foco:</strong> Perspectiva internacional sobre o Brasil, ODS e COP30.</p><p><strong>Formato:</strong> Cobertura/Estúdio em NY, trazendo visão global e expectativas para a COP em Belém.</p><p><strong>Nota:</strong> Temas e convidados (diplomatas, especialistas internacionais) a co-definir.</p></div></div>
                         </div>
-                        <!-- Episódio 6 -->
+                        <!-- Episódio 6 AJUSTADO -->
                          <div class="roadmap-phase">
-                            <div class="phase-header"><span class="phase-badge">#6</span><h4 class="phase-title">COP30 em Belém: Ação Empresarial em Foco</h4></div>
+                            <div class="phase-header"><span class="phase-badge">#6</span><h4 class="phase-title">COP30 em Belém: Ação Empresarial</h4></div>
                             <div class="episode-card"><div class="episode-details"><p class="episode-location-date">Novembro 2025 • Belém, BR (COP30)</p><p class="episode-theme"><strong>Foco:</strong> Cobertura dos Side Events do Pacto Global na COP30.</p><p><strong>Formato:</strong> Programa(s) especial(is) direto de Belém, com entrevistas exclusivas, mostrando o <strong>engajamento e as soluções do setor empresarial (membros do Pacto Global)</strong> presente na conferência.</p><p><strong>Nota:</strong> Temas e convidados (negociadores, líderes empresariais presentes, ativistas) a co-definir.</p></div></div>
                         </div>
                         <!-- Episódio 7 -->
@@ -255,10 +234,10 @@
                  </div>
             </div>
 
-            <!-- Tab content: Ativations & Guests (Listas permanecem as mesmas) -->
+             <!-- Tab content: Ativations & Guests (Listas ATUALIZADAS e Box Informativo) -->
              <div class="tab-content hidden" id="activations">
                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200 mb-10">
-                     <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Ativações Complementares</h3>
+                      <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Ativações Complementares</h3>
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div class="bg-[#AECFE6]/20 p-6 rounded-lg border border-[#AECFE6]">
                             <div class="flex items-center mb-3"><i data-lucide="graduation-cap" class="w-6 h-6 text-[#1E3250] mr-3"></i><h4 class="text-lg font-semibold text-[#1E3250]">Capacitação Exclusiva</h4></div>
@@ -274,9 +253,16 @@
                  </div>
                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
                      <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Potencial de Convidados</h3>
-                    <p class="text-gray-600 mb-6 text-center">Sugestões de vozes relevantes para enriquecer os debates (lista sujeita a confirmação e co-definição).</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- Lideranças Empresariais -->
+                     <p class="text-gray-600 mb-6 text-center">Sugestões de vozes relevantes para enriquecer os debates (lista sujeita a confirmação e co-definição).</p>
+
+                    <!-- AJUSTE: Box informativo sobre acesso à rede de CEOs -->
+                    <div class="info-box info-box-blue">
+                         <i data-lucide="link" class="w-5 h-5"></i>
+                        <p><strong>Contrapartida de Acesso (Pacto Global):</strong> Como demonstração de boa vontade e para enriquecer o conteúdo, o Pacto Global facilitará a ponte entre o Podpah e CEOs/C-Levels de sua rede de empresas participantes. O Podpah terá liberdade para indicar quais perfis/empresas têm mais interesse em entrevistar, e o Pacto Global auxiliará no contato e agendamento, respeitando a disponibilidade dos executivos.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                         <!-- Lideranças Empresariais ATUALIZADA -->
                          <div class="bg-[#AECFE6]/20 p-4 rounded-lg border border-[#AECFE6]">
                             <div class="flex items-center mb-3"><i data-lucide="briefcase" class="w-5 h-5 text-[#1E3250] mr-2"></i><h4 class="font-semibold text-sm text-[#1E3250]">Lideranças Empresariais (Pacto Global)</h4></div>
                             <ul class="space-y-1.5 text-xs text-gray-700">
@@ -284,13 +270,13 @@
                                 <li>João Paulo Ferreira (CEO, Natura &Co LatAm)</li>
                                 <li>Beto Abreu (CEO, Suzano)</li>
                                 <li>Roberto Jatahy (CEO, Grupo Soma)</li>
-                                <li>Carlos Piani (CEO, Sabesp)</li>
+                                <!-- Removido: Carlos Piani -->
                                 <li>Thiago Maffra (CEO, XP Inc)</li>
                                 <li>Cristovam Ferrara (Dir. Valor Social, Globo)</li>
                                 <li>Luciana Dummar (Pres., Jornal OPOVO)</li>
                             </ul>
                         </div>
-                        <!-- Especialistas e Líderes Governamentais -->
+                        <!-- Especialistas e Líderes Governamentais ATUALIZADA -->
                         <div class="bg-[#AECFE6]/20 p-4 rounded-lg border border-[#AECFE6]">
                              <div class="flex items-center mb-3"><i data-lucide="landmark" class="w-5 h-5 text-[#1E3250] mr-2"></i><h4 class="font-semibold text-sm text-[#1E3250]">Especialistas e Gov.</h4></div>
                              <ul class="space-y-1.5 text-xs text-gray-700">
@@ -301,12 +287,12 @@
                                <li>Marina Silva (Ministra MMA)</li>
                                <li>Silvia Rucks (Coord. Residente ONU BR)</li>
                                <li>Carolina Pasquali (CEO, Greenpeace)</li>
-                               <li>Gabriela Furtado (PNUD)</li>
-                               <li>Ana Carolina Paci (Pacto Global)</li>
+                               <!-- Removido: Gabriela Furtado -->
+                               <!-- Removido: Ana Carolina Paci -->
                                <li>Presidente Lula</li>
                             </ul>
                         </div>
-                        <!-- Líderes Comunitários & Ativistas -->
+                        <!-- Líderes Comunitários & Ativistas ATUALIZADA -->
                         <div class="bg-[#AECFE6]/20 p-4 rounded-lg border border-[#AECFE6]">
                              <div class="flex items-center mb-3"><i data-lucide="sprout" class="w-5 h-5 text-[#1E3250] mr-2"></i><h4 class="font-semibold text-sm text-[#1E3250]">Líderes Comunitários & Ativistas</h4></div>
                              <ul class="space-y-1.5 text-xs text-gray-700">
@@ -315,7 +301,7 @@
                                 <li>Amanda da Cruz Costa</li><li>Kamila Camilo</li><li>Preto Zezé</li>
                             </ul>
                         </div>
-                        <!-- Figuras Públicas & Influenciadores -->
+                        <!-- Figuras Públicas & Influenciadores ATUALIZADA -->
                         <div class="bg-[#AECFE6]/20 p-4 rounded-lg border border-[#AECFE6]">
                              <div class="flex items-center mb-3"><i data-lucide="star" class="w-5 h-5 text-[#1E3250] mr-2"></i><h4 class="font-semibold text-sm text-[#1E3250]">Figuras Públicas & Influencers</h4></div>
                              <ul class="space-y-1.5 text-xs text-gray-700">
@@ -329,41 +315,37 @@
                  </div>
             </div>
 
-             <!-- Tab content: Metrics -->
+             <!-- Tab content: Metrics (Já corrigido na versão anterior) -->
              <div class="tab-content hidden" id="metrics">
-                 <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+                  <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
                     <h3 class="text-2xl font-semibold mb-6 text-[#1E3250]">Medindo o Sucesso do Podpahcto</h3>
                     <p class="text-gray-600 mb-8 text-center">Indicadores chave para avaliar o alcance, engajamento e impacto da parceria.</p>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                         <!-- Metric 1: Alcance -->
                          <div class="bg-[#AECFE6]/20 p-5 rounded-lg border border-[#AECFE6]">
                              <div class="flex items-center mb-3"><i data-lucide="area-chart" class="w-6 h-6 text-[#1E3250] mr-3"></i><h4 class="font-semibold text-lg text-[#1E3250]">Alcance e Engajamento</h4></div>
                             <ul class="space-y-2 text-sm text-gray-700">
                                 <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Visualizações totais (7 episódios)</li>
                                 <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Tempo médio de retenção</li>
-                                <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Taxa de engajamento (likes, comm., shares)</li>
+                                <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Taxa de engajamento</li>
                                 <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Menções à #Podpahcto</li>
                             </ul>
                         </div>
-                        <!-- Metric 2: Percepção -->
                         <div class="bg-[#AECFE6]/20 p-5 rounded-lg border border-[#AECFE6]">
-                              <div class="flex items-center mb-3"><i data-lucide="message-circle-heart" class="w-6 h-6 text-[#1E3250] mr-3"></i><h4 class="font-semibold text-lg text-[#1E3250]">Percepção e Conscientização</h4></div>
+                              <div class="flex items-center mb-3"><i data-lucide="message-circle-heart" class="w-6 h-6 text-[#1E3250] mr-3"></i><h4 class="font-semibold text-lg text-[#1E3250]">Percepção & Conscientização</h4></div>
                             <ul class="space-y-2 text-sm text-gray-700">
                                  <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Análise qualitativa de comentários</li>
                                 <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Resultados de enquetes</li>
-                                <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Aumento busca por termos (COP30, PG)</li>
+                                <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Aumento busca por termos</li>
                                  <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Cobertura de mídia</li>
                             </ul>
                         </div>
-                        <!-- Metric 3: Capacitação -->
                         <div class="bg-[#AECFE6]/20 p-5 rounded-lg border border-[#AECFE6]">
                               <div class="flex items-center mb-3"><i data-lucide="user-check" class="w-6 h-6 text-[#1E3250] mr-3"></i><h4 class="font-semibold text-lg text-[#1E3250]">Capacitação e Mobilização</h4></div>
                             <ul class="space-y-2 text-sm text-gray-700">
-                               <li><i data-lucide="check-circle" class="inline w-4 h-4 mr-1 text-[#1E3250]"></i><strong>Meta: +12 influenciadores capacitados</strong> (Missão COP30 Pocket)</li>
-                               <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Produção de conteúdo qualificado por eles</li>
+                               <li><i data-lucide="check-circle" class="inline w-4 h-4 mr-1 text-[#1E3250]"></i><strong>Meta: +12 influenciadores capacitados</strong></li>
+                               <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Produção de conteúdo qualificado</li>
                                <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Cliques em links / Downloads</li>
-                               <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Engajamento em CTAs propostos</li>
+                               <li><i data-lucide="dot" class="inline w-4 h-4 mr-1 text-[#4C6B8B]"></i>Engajamento em CTAs</li>
                             </ul>
                         </div>
                     </div>
@@ -389,6 +371,7 @@
         const contents = document.querySelectorAll('.tab-content');
         const header = document.querySelector('header');
         const headerHeight = header ? header.offsetHeight : 0;
+        const tabsNav = document.querySelector('nav[aria-label="Tabs"]'); // Get tabs container
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -403,6 +386,9 @@
                 const targetContent = document.getElementById(targetId);
                 if (targetContent) {
                     targetContent.classList.remove('hidden');
+                     // Scroll content into view, considering sticky header/tabs height
+                     const contentTop = targetContent.getBoundingClientRect().top + window.pageYOffset - headerHeight - (tabsNav ? tabsNav.offsetHeight : 0) - 20; // Added extra offset
+                     window.scrollTo({ top: contentTop, behavior: 'smooth' });
                 }
             });
         });
